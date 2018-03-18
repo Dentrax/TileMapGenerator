@@ -76,13 +76,13 @@ TileMapGenerator program for Java language is an easy and simple way to create y
 
 **Warning: You must use least 128x128 values for map-size**
 
-* 1. Define your unique Random
+* Define your unique Random
 
 ```java
 private static final Random random = new Random(System.currentTimeMillis());
 ```
 
-* 2. Define your own LayerSettings
+* Define your own LayerSettings
 
 ```java
 LayerSetting patternLayerSetting = new LayerSetting(height, width, stepSize, depth, random);
@@ -92,7 +92,7 @@ LayerSetting groundLayerSetting = new LayerSetting(128, 128, 16, 0, random);
 LayerSetting undergroundLayerSetting = new LayerSetting(128, 128, 16, 0, random);
 ```
 
-* 3. Define your own LayerGenerators
+* Define your own LayerGenerators
 
 ```java
 LayerGenerator patternGenerator = new LayerGenerator(patternLayerSetting);
@@ -102,7 +102,7 @@ LayerGenerator groundGenerator = new LayerGenerator(groundLayerSetting);
 LayerGenerator undergroundGenerator = new LayerGenerator(undergroundLayerSetting);
 ```
 
-* 4. Create your own LayerMap
+* Create your own LayerMap
 
 ```java
 LayerMap patternMap = patternGenerator.doCreate(LayerType.ANY);
@@ -112,7 +112,7 @@ LayerMap groundMap = groundGenerator.doCreate(LayerType.GROUND);
 LayerMap undergroundMap = undergroundGenerator.doCreate(LayerType.UNDERGROUND);
 ```
 
-* 5. View your created Map
+* View your created Map
 
 ```java
 TileMapViewer.ViewMap("PATTERN", heightScaleFactor, widthScaleFactor, patternMap);
